@@ -44,17 +44,18 @@ function previewFile() {
    $.post('/',{imgdata},function(){
      console.log("successfull")
 
-     $.ajax({url: '/data'}).done(function (data) {
-     console.log(data);
-     $('.btnresult').html(data);
+
+ });
+
+ $.ajax({url: '/data'}).done(function (data) {
+ console.log(data);
+ $('.btnresult').html(data);
 
 
 
 
 
-   });
-   })
-
+});
 
   }, false);
 
