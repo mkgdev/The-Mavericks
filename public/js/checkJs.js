@@ -34,16 +34,34 @@ if (navigator.getUserMedia) {
          cont.drawImage(video,0,0,canvas.width,canvas.height)
          var imgdata=canvas.toDataURL();
          modalimg.src=imgdata;
-         console.log(imgdata);
+        //  console.log(imgdata);
 
-         $.post('/',{imgdata},function(data,err){
-           console.log(data);
-           console.log(err);
-         })
-         $.ajax({url: '/data'}).done(function (data) {
-    console.log(data);
-    $('.result').html(data);
+
+
+         var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console.log("done")
+    }
+  };
+  xhttp.open("POST", "/", true);
+  xhttp.send(null);
+
+  // $.ajax({type:'POST', url:'/'}).always(function(){updateData();});
+
+  //        $.post('/',{imgdata},function(data, status){
+  //         //  console.log(data);
+  //         //  console.log(err);
+  //         console.log('done');
+   //
+   //
+  //  })
+   function updateData(){
+   $.ajax({url: '/data'}).done(function (data) {
+console.log(data);
+$('.result').html(data);
+
 });
-
+}
 
        });

@@ -20,7 +20,7 @@ router.post('/',function(req, res)
 {
 
   var body = req.body.imgdata;
-  console.log(body);
+  // console.log(body);
   base64Data = body.replace(/^data:image\/png;base64,/,""),
   binaryData = new Buffer(base64Data, 'base64').toString('binary');
 

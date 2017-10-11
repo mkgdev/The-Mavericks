@@ -40,7 +40,7 @@ function previewFile() {
   reader.addEventListener("load", function () {
     preview.src = reader.result;
     var imgdata=reader.result;
-    console.log(reader.result)
+
    $.post('/',{imgdata},function(){
      console.log("successfull")
 
