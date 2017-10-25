@@ -70,19 +70,10 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 
 // *****************************
 
-
-
-
-
 app.listen('8080', function()
 {
 
-
 console.log('Server on running on 8080 port');
 
-}
-
-
-
-
+ }
 );
